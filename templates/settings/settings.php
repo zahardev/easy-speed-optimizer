@@ -5,7 +5,7 @@
  * @var string $page_slug
  * */
 
-use ESPDOPT\Entities\Settings_Tab;
+use Espdopt\Entities\Settings_Tab;
 
 ?>
 

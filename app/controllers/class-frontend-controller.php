@@ -1,12 +1,12 @@
 <?php
 
-namespace ESPDOPT\Controllers;
+namespace Espdopt\Controllers;
 
-use ESPDOPT\Traits\Singleton;
+use Espdopt\Traits\Singleton;
 
 /**
  * Class Assets_Controller
- * @package ESPDOPT
+ * @package Espdopt
  */
 class Frontend_Controller {
 

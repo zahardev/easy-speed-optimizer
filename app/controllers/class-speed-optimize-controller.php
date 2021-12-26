@@ -1,14 +1,14 @@
 <?php
 
-namespace ESPDOPT\Controllers;
+namespace Espdopt\Controllers;
 
-use ESPDOPT\Interfaces\Singleton;
-use ESPDOPT\Traits\Singleton as SingletonTrait;
+use Espdopt\Interfaces\Singleton;
+use Espdopt\Traits\Singleton as SingletonTrait;
 
 
 /**
  * Class Speed_Optimize_Controller
- * @package ESPDOPT
+ * @package Espdopt
  */
 class Speed_Optimize_Controller implements Singleton {
 

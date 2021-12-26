@@ -1,6 +1,6 @@
 <?php
 
-namespace ESPDOPT\Interfaces;
+namespace Espdopt\Interfaces;
 
 interface Singleton {
 	public function init();

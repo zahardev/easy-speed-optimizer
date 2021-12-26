@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return apply_filters( 'espdopt_settings_config', array(
     array(
         'id'     => 'main',
         'title'  => 'Main Settings',
@@ -24,4 +24,4 @@ return array(
         ),
 
     ),
-);
+) );

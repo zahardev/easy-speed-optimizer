@@ -3,7 +3,12 @@
 spl_autoload_register( function ( $class ) {
 	$file_path = explode( '\\', $class );
 
-	$file_path[0] = 'app'; //the first element is always just application name - the folder is app
+    if ( empty( $file_path[0] ) || ( 'Espdopt' !== $file_path[0] && 'Espdopt_Pro' !== $file_path[0] ) ) {
+        return;
+    }
+
+    //the first element is always just application name - the folder is either app or pro
+    $file_path[0] = 'Espdopt_Pro' === $file_path[0] ? 'pro' : 'app';
 
 	foreach ( $file_path as $k => $v ) {
 		$v               = mb_strtolower( str_replace( '_', '-', $v ) );

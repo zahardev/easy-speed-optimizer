@@ -1,12 +1,12 @@
 <?php
 
-namespace ESPDOPT\Entities;
+namespace Espdopt\Entities;
 
-use ESPDOPT\Controllers\Settings_Controller;
+use Espdopt\Controllers\Settings_Controller;
 
 /**
  * Class Settings_Tab
- * @package ESPDOPT
+ * @package Espdopt
  */
 class Settings_Tab {
 

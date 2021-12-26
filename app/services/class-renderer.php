@@ -1,8 +1,8 @@
 <?php
 
-namespace ESPDOPT\Services;
+namespace Espdopt\Services;
 
-use ESPDOPT\Interfaces\Renderer as Interface_Renderer;
+use Espdopt\Interfaces\Renderer as Interface_Renderer;
 
 class Renderer implements Interface_Renderer {
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace ESPDOPT\Traits;
+namespace Espdopt\Traits;
 
 
 /**

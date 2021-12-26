@@ -8,7 +8,7 @@
  * Author URI:  https://github.com/zahardev
  */
 
-use ESPDOPT\App;
+use Espdopt\App;
 
 if ( ! function_exists( 'add_action' ) ) {
     exit;

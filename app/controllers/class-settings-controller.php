@@ -1,15 +1,15 @@
 <?php
 
-namespace ESPDOPT\Controllers;
+namespace Espdopt\Controllers;
 
-use ESPDOPT\Entities\Settings_Tab;
-use ESPDOPT\Services\Renderer;
+use Espdopt\Entities\Settings_Tab;
+use Espdopt\Services\Renderer;
 
-use ESPDOPT\Traits\Singleton as SingletonTrait;
+use Espdopt\Traits\Singleton as SingletonTrait;
 
 /**
  * Class Settings_Controller
- * @package ESPDOPT
+ * @package Espdopt
  */
 class Settings_Controller {
 
@@ -53,10 +53,12 @@ class Settings_Controller {
      * @return array
      */
     public function add_plugin_links( $links ) {
-        $links[] = Renderer::fetch( 'link', [
+        $settings_link = Renderer::fetch( 'link', [
             'href'  => admin_url( 'options-general.php?page=' . self::MANAGER_SETTINGS_URL ),
             'label' => 'Settings',
         ] );
+
+        array_unshift( $links, $settings_link );
 
         return $links;
     }
