@@ -23,7 +23,7 @@ class Settings_Controller {
     /**
      * @var array $settings
      */
-    private $settings;
+    protected $settings;
 
 
     public function init() {
@@ -63,14 +63,11 @@ class Settings_Controller {
         return $links;
     }
 
+    /**
+     * Add settings page.
+     */
     public function add_settings_pages() {
-        $pages = array(
-            array(
-                'title'     => __( 'Easy Speed Optimizer', 'easy-speed-optimizer' ),
-                'menu_slug' => self::MANAGER_SETTINGS_URL,
-                'page_slug' => self::MANAGER_SETTINGS_URL,
-            ),
-        );
+        $pages = $this->get_setting_pages_config();
 
         foreach ( $pages as $page ) {
             add_options_page(
@@ -83,6 +80,19 @@ class Settings_Controller {
                 }
             );
         }
+    }
+
+    /**
+     * @return array[]
+     */
+    protected function get_setting_pages_config() {
+        return array(
+            array(
+                'title'     => __( 'Easy Speed Optimizer', 'easy-speed-optimizer' ),
+                'menu_slug' => self::MANAGER_SETTINGS_URL,
+                'page_slug' => self::MANAGER_SETTINGS_URL,
+            ),
+        );
     }
 
     public function init_setting_tabs() {
@@ -276,6 +286,12 @@ class Settings_Controller {
 
         $current_tab = $tabs[ $current_tab ];
 
-        Renderer::render( 'settings/settings.php', compact( 'page_slug', 'tabs', 'current_tab' ) );
+        $settings_title = $this->get_settings_title();
+
+        Renderer::render( 'settings/settings.php', compact( 'page_slug', 'tabs', 'current_tab', 'settings_title' ) );
+    }
+
+    protected function get_settings_title() {
+        return __( 'Easy Speed Optimizer Settings', 'easy-speed-optimizer' );
     }
 }

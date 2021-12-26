@@ -3,6 +3,7 @@
  * @var Settings_Tab[] $tabs
  * @var Settings_Tab $current_tab
  * @var string $page_slug
+ * @var string $settings_title
  * */
 
 use Espdopt\Entities\Settings_Tab;
@@ -12,7 +13,7 @@ use Espdopt\Entities\Settings_Tab;
 <div id="dso-settings" class="dso-settings">
     <form action='options.php' method='post'>
 
-        <h1>Easy Speed Optimizer Settings</h1>
+        <h1><?php echo $settings_title; ?></h1>
 
         <ul class="dso-tabs">
             <?php foreach ( $tabs as $tab ) : ?>
