@@ -1,0 +1,71 @@
+.dso-settings h2 {
+    position: relative;
+    background: #0c88b4;
+    color: #fff;
+    padding: 10px 10px 10px 30px;
+    margin: 0 10px 10px 0;
+    cursor: pointer;
+}
+
+.dso-settings h2::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid #fff;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    left: 12px;
+    top: 17px;
+}
+
+.dso-settings input[type=submit] {
+    background: #0c88b4;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.dso-filter {
+    display: inline-block;
+    margin: 0 20px 0 5px;
+}
+
+.dso-tabs {
+    border-bottom: 1px solid #0c88b4;;
+    margin-right: 10px;
+    padding-left: 5px;
+}
+
+.dso-tabs .dso-tab {
+    display: inline-block;
+    color: #0c88b4;
+    vertical-align: top;
+    white-space: nowrap;
+    margin: 0;
+    position: relative;
+    top: 1px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.dso-tabs .dso-tab a {
+    text-decoration: none;
+    color: #0c88b4;
+    padding: 7px;
+    border: 1px solid #0c88b4;
+    background: #d7e0e3;
+    border-radius: 3px 3px 0 0;
+    display: inline-block;
+}
+
+.dso-tabs .dso-tab a:focus, .dso-tabs .dso-tab.active a {
+    box-shadow: 0 -1px 1px 0 #cccdce;
+}
+
+.dso-tabs .dso-tab.active a {
+    color: #0c88b4;
+    background: #f0f0f1;
+    border-bottom: #f0f0f1;
+    padding-bottom: 8px;
+}
