@@ -196,14 +196,44 @@ class Settings_Controller {
      */
     public function render_textarea( $args ) {
         $defaults = array(
-            'id'    => '',
-            'title' => '',
-            'label' => '',
-            'rows'  => '',
-            'cols'  => '',
+            'id'          => '',
+            'title'       => '',
+            'description' => '',
+            'label'       => '',
+            'rows'        => 10,
+            'cols'        => 60,
         );
 
         Renderer::render( 'settings/fields/textarea', wp_parse_args( $args, $defaults ) );
+    }
+
+    /**
+     * @param array $args
+     */
+    public function render_button( $args ) {
+        $defaults = array(
+            'id'      => '',
+            'title'   => '',
+            'text'    => '',
+            'classes' => 'button',
+        );
+
+        Renderer::render( 'settings/fields/button', wp_parse_args( $args, $defaults ) );
+    }
+
+    /**
+     * @param array $args
+     */
+    public function render_link( $args ) {
+        $defaults = array(
+            'id'      => '',
+            'title'   => '',
+            'text'    => '',
+            'classes' => '',
+            'url'     => '',
+        );
+
+        Renderer::render( 'settings/fields/link', wp_parse_args( $args, $defaults ) );
     }
 
     /**
@@ -218,7 +248,7 @@ class Settings_Controller {
 
         $this->settings = $settings;
 
-        return $this->settings[ $tab ];
+        return isset( $this->settings[ $tab ] ) ? $this->settings[ $tab ] : null;
     }
 
 
