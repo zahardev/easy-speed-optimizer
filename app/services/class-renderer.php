@@ -24,9 +24,6 @@ class Renderer implements Interface_Renderer {
     }
 
     public static function render( $template, $args = [] ) {
-        $res = self::fetch( $template, $args );
-        echo $res;
-
-        return $res;
+        echo self::fetch( $template, $args );
     }
 }

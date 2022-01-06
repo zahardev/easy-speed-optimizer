@@ -3,7 +3,7 @@ Contributors: zahardoc
 Tags: speed, optimization, SEO
 Requires at least: 4.7
 Tested up to: 5.8
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -52,6 +52,10 @@ Your site is https://mysite.com, - go to https://mysite.com/?v=2 and check the p
 3. Links to styles were successfully removed.
 
 == Changelog ==
+
+= 1.0.1 =
+* 2022-01-06
+* Escape echo variables
 
 = 1.0.0 =
 * 2021-12-24
