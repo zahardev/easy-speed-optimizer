@@ -4,4 +4,4 @@
  * @var string $value
  * */
 ?>
-<input type="hidden" id="<?php echo $id ?>" name="<?php echo $id ?>" value="<?php echo esc_attr( $value ) ?>"/>
+<input type="hidden" id="<?php echo esc_attr( $id ) ?>" name="<?php echo esc_attr( $id ) ?>" value="<?php echo esc_attr( $value ) ?>"/>

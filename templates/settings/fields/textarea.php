@@ -8,8 +8,8 @@
  * @var string $cols
  * */
 ?>
-<textarea id="<?php echo $id ?>" name="<?php echo $id ?>" rows="<?php echo $rows ?>" cols="<?php echo $cols ?>">
-<?php echo esc_attr( $value ) ?>
+<textarea id="<?php echo esc_attr( $id ) ?>" name="<?php echo esc_attr( $id ) ?>" rows="<?php echo esc_attr( $rows ) ?>" cols="<?php echo esc_attr( $cols ) ?>">
+<?php echo esc_textarea( $value ) ?>
 </textarea>
 <br>
-<label for="<?php echo $id ?>"><?php echo $description ?></label>
+<label for="<?php echo esc_attr( $id ) ?>"><?php echo esc_html( $description ) ?></label>

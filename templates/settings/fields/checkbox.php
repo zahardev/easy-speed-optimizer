@@ -4,4 +4,4 @@
  * @var bool $value
  * */
 ?>
-<input type="checkbox" id="<?php echo $id ?>" name="<?php echo $id ?>" value="1" <?php checked( $value, 1 ); ?> />
+<input type="checkbox" id="<?php echo esc_attr( $id ) ?>" name="<?php echo esc_attr( $id ) ?>" value="1" <?php checked( $value, 1 ); ?> />

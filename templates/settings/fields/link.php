@@ -7,4 +7,4 @@
  * */
 ?>
 
-<a href="<?php echo esc_attr( $url ) ?>" class="<?php echo esc_attr( $classes ) ?>"><?php echo $text ?></a>
+<a href="<?php echo esc_attr( $url ) ?>" class="<?php echo esc_attr( $classes ) ?>"><?php echo esc_html( $text ) ?></a>

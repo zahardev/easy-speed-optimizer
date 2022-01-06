@@ -13,18 +13,18 @@ use Espdopt\Entities\Settings_Tab;
 <div id="dso-settings" class="dso-settings">
     <form action='options.php' method='post'>
 
-        <h1><?php echo $settings_title; ?></h1>
+        <h1><?php echo esc_html( $settings_title ) ?></h1>
 
         <ul class="dso-tabs">
             <?php foreach ( $tabs as $tab ) : ?>
                 <li class="dso-tab <?php echo ( $tab->id === $current_tab->id ) ? 'active' : '' ?>">
-                    <a href="<?php echo esc_attr( $tab->get_url() ) ?>"><?php echo $tab->title ?></a>
+                    <a href="<?php echo esc_attr( $tab->get_url() ) ?>"><?php echo esc_html( $tab->title ) ?></a>
                 </li>
             <?php endforeach; ?>
         </ul>
 
         <?php if ( $current_tab->description ): ?>
-            <p style="font-size: 16px;"><?php echo $current_tab->description; ?></p>
+            <p style="font-size: 16px;"><?php echo esc_html( $current_tab->description ) ?></p>
         <?php endif; ?>
 
         <?php

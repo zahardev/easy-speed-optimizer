@@ -5,4 +5,4 @@
  * */
 ?>
 
-<a href="<?php echo $href ?>"><?php echo $label ?></a>
+<a href="<?php echo esc_url( $href ) ?>"><?php echo esc_html( $label ) ?></a>
