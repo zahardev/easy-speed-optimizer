@@ -26,6 +26,60 @@ class Speed_Optimize_Controller implements Singleton {
 
         $this->dequeue_styles();
         $this->dequeue_scripts();
+        $this->init_critical_css();
+    }
+
+    protected function init_critical_css() {
+        $critical_css = Settings_Controller::instance()->get_settings( 'critical_css' );
+
+        if ( empty( $critical_css['enable_critical_css'] ) ) {
+            return;
+        }
+
+        $this->maybe_defer_all_styles();
+        $this->print_critical_css( $critical_css['critical_css'] );
+    }
+
+    protected function print_critical_css( $css ) {
+        if ( empty( $css ) ) {
+            return;
+        }
+
+        add_action( 'wp_print_scripts', function () use ( $css ) {
+            echo '<!-- Easy Speed Optimizer Critical CSS -->' . PHP_EOL;
+            echo '<style>' . $css . '</style>' . PHP_EOL;
+            echo '<!-- End Easy Speed Optimizer Critical CSS -->' . PHP_EOL;
+        }, 100 );
+    }
+
+    protected function maybe_defer_all_styles() {
+        add_action( 'init', function () {
+            if ( is_admin() ) {
+                return;
+            }
+
+            global $wp;
+            $wp->parse_request();
+            if ( false !== strpos( $wp->request, 'wp-login.php' ) ) {
+                return;
+            }
+
+            $this->defer_all_styles();
+        } );
+    }
+
+    protected function defer_all_styles() {
+        add_filter( 'style_loader_tag', function ( $link ) {
+
+            if ( is_admin() ) {
+                return $link;
+            }
+
+            $deferred = '<noscript>' . $link . '</noscript>';
+            $deferred .= str_replace( "media='all'", "media='print' onload=\"this.media='all'\"", $link );
+
+            return $deferred;
+        } );
     }
 
 

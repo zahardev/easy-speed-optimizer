@@ -20,4 +20,21 @@ return apply_filters( 'espdopt_settings_config', array(
         ),
 
     ),
+    array(
+        'id'     => 'critical_css',
+        'title'  => 'Critical CSS',
+        'fields' => array(
+            array(
+                'id'    => 'enable_critical_css',
+                'type'  => 'checkbox',
+                'title' => 'Enable above the fold critical CSS',
+            ),
+            array(
+                'id'      => 'critical_css',
+                'type'    => 'textarea',
+                'title'   => 'Critical CSS',
+                'classes' => 'espdopt_critical_css',
+            ),
+        ),
+    ),
 ) );

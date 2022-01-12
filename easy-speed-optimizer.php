@@ -21,4 +21,9 @@ define( 'ESPDOPT_PLUGIN_URL', plugins_url( '', __FILE__ ) );
 
 require_once 'wp-autoloader.php';
 
-App::instance()->init();
+if ( class_exists( 'Espdopt_Pro\App_Pro' ) ) {
+    Espdopt_Pro\App_Pro::instance()->init();
+} else {
+    App::instance()->init();
+}
+

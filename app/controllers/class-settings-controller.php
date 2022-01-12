@@ -31,8 +31,19 @@ class Settings_Controller {
         add_action( 'admin_menu', array( $this, 'add_settings_pages' ) );
         add_action( 'admin_init', array( $this, 'init_setting_tabs' ) );
         add_action( 'espdopt_tab_settings', array( $this, 'provide_settings_tab' ) );
+        add_filter( 'pre_update_option_' . self::MANAGER_SETTINGS_URL, array( $this, 'fix_option_rewrite' ), 10, 2 );
 
         return $this;
+    }
+
+    /**
+     * @param $value
+     * @param $old_value
+     *
+     * @return array
+     */
+    public function fix_option_rewrite(  $value, $old_value ) {
+        return array_merge( $old_value, $value );
     }
 
     /**
@@ -144,6 +155,7 @@ class Settings_Controller {
 
 
     protected function add_settings_field( $args, $value ) {
+        $field_name = $this->get_settings_field_name( $args['id'] );
         $field_id = $this->get_settings_field_id( $args['id'] );
         add_settings_field(
             $field_id,
@@ -151,12 +163,16 @@ class Settings_Controller {
             array( $this, 'render_' . $args['type'] ),
             self::MANAGER_SETTINGS_URL,
             self::MANAGER_SETTINGS_URL,
-            array_merge( $args, array( 'value' => $value, 'id' => $field_id ) )
+            array_merge( $args, array( 'value' => $value, 'name' => $field_name, 'id' => $field_id ) )
         );
     }
 
-    protected function get_settings_field_id( $field_id ) {
+    protected function get_settings_field_name( $field_id ) {
         return sprintf( '%s[%s][%s]', self::MANAGER_SETTINGS_URL, $this->get_current_tab(), $field_id );
+    }
+
+    protected function get_settings_field_id( $field_id ) {
+        return sprintf( '%s_%s_%s', self::MANAGER_SETTINGS_URL, $this->get_current_tab(), $field_id );
     }
 
     protected function get_current_tab() {

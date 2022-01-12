@@ -1,4 +1,4 @@
-.dso-settings h2 {
+.espdopt-settings h2 {
     position: relative;
     background: #0c88b4;
     color: #fff;
@@ -7,7 +7,7 @@
     cursor: pointer;
 }
 
-.dso-settings h2::before {
+.espdopt-settings h2::before {
     content: '';
     position: absolute;
     display: block;
@@ -20,24 +20,24 @@
     top: 17px;
 }
 
-.dso-settings input[type=submit] {
+.espdopt-settings input[type=submit] {
     background: #0c88b4;
     font-size: 16px;
     font-weight: bold;
 }
 
-.dso-filter {
+.espdopt-filter {
     display: inline-block;
     margin: 0 20px 0 5px;
 }
 
-.dso-tabs {
+.espdopt-tabs {
     border-bottom: 1px solid #0c88b4;;
     margin-right: 10px;
     padding-left: 5px;
 }
 
-.dso-tabs .dso-tab {
+.espdopt-tabs .espdopt-tab {
     display: inline-block;
     color: #0c88b4;
     vertical-align: top;
@@ -49,7 +49,7 @@
     font-size: 14px;
 }
 
-.dso-tabs .dso-tab a {
+.espdopt-tabs .espdopt-tab a {
     text-decoration: none;
     color: #0c88b4;
     padding: 7px;
@@ -59,13 +59,17 @@
     display: inline-block;
 }
 
-.dso-tabs .dso-tab a:focus, .dso-tabs .dso-tab.active a {
+.espdopt-tabs .espdopt-tab a:focus, .espdopt-tabs .espdopt-tab.active a {
     box-shadow: 0 -1px 1px 0 #cccdce;
 }
 
-.dso-tabs .dso-tab.active a {
+.espdopt-tabs .espdopt-tab.active a {
     color: #0c88b4;
     background: #f0f0f1;
     border-bottom: #f0f0f1;
     padding-bottom: 8px;
+}
+
+.espdopt_critical_css {
+    width: 100%;
 }

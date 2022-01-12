@@ -10,14 +10,14 @@ use Espdopt\Entities\Settings_Tab;
 
 ?>
 
-<div id="dso-settings" class="dso-settings">
+<div id="espdopt-settings" class="espdopt-settings">
     <form action='options.php' method='post'>
 
         <h1><?php echo esc_html( $settings_title ) ?></h1>
 
-        <ul class="dso-tabs">
+        <ul class="espdopt-tabs">
             <?php foreach ( $tabs as $tab ) : ?>
-                <li class="dso-tab <?php echo ( $tab->id === $current_tab->id ) ? 'active' : '' ?>">
+                <li class="espdopt-tab <?php echo ( $tab->id === $current_tab->id ) ? 'active' : '' ?>">
                     <a href="<?php echo esc_attr( $tab->get_url() ) ?>"><?php echo esc_html( $tab->title ) ?></a>
                 </li>
             <?php endforeach; ?>
