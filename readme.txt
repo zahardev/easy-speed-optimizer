@@ -3,7 +3,7 @@ Contributors: zahardoc
 Tags: speed, optimization, SEO
 Requires at least: 4.7
 Tested up to: 5.8
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -13,6 +13,9 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 If your WordPress site is overloaded with a lot of styles and scripts,
 and you know that those styles and scripts are redundant, this plugin is for you.
 Just provide a list of styles and scripts that you want to remove, save settings and enjoy!
+
+Besides, after removing redundant styles and scripts, you can specify critical CSS.
+Easy Scripts Optimizer will automatically defer all styles loading, making your site loading lightning fast!
 
 == Frequently Asked Questions ==
 
@@ -52,6 +55,10 @@ Your site is https://mysite.com, - go to https://mysite.com/?v=2 and check the p
 3. Links to styles were successfully removed.
 
 == Changelog ==
+
+= 1.1.0 =
+* 2022-01-12
+* Critical CSS settings
 
 = 1.0.1 =
 * 2022-01-06
