@@ -42,8 +42,12 @@ class Settings_Controller {
      *
      * @return array
      */
-    public function fix_option_rewrite(  $value, $old_value ) {
-        return array_merge( $old_value, $value );
+    public function fix_option_rewrite( $value, $old_value ) {
+        if ( is_array( $old_value ) && is_array( $value ) ) {
+            return array_merge( $old_value, $value );
+        }
+
+        return $value;
     }
 
     /**
