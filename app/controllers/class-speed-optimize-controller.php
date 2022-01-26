@@ -20,13 +20,32 @@ class Speed_Optimize_Controller implements Singleton {
      * Init function
      */
     public function init() {
-        if ( is_admin() ) {
+        if ( ! $this->need_optimization() ) {
             return;
         }
 
         $this->dequeue_styles();
         $this->dequeue_scripts();
         $this->init_critical_css();
+    }
+
+    protected function need_optimization() {
+        if ( is_admin() ) {
+            return false;
+        }
+
+        // Now try checks for early calls:
+        $admin_url   = get_admin_url();
+        $current_url = home_url( add_query_arg( $_GET ) );
+
+        $is_admin             = 0 === strpos( $current_url, $admin_url );
+        $is_elementor_preview = isset( $_GET['elementor-preview'] );
+
+        if ( $is_admin || $is_elementor_preview ) {
+            return false;
+        }
+
+        return true;
     }
 
     protected function init_critical_css() {
