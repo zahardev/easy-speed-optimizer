@@ -27,6 +27,16 @@ class Speed_Optimize_Controller implements Singleton {
         $this->dequeue_styles();
         $this->dequeue_scripts();
         $this->init_critical_css();
+        $this->disable_emoji();
+    }
+
+    protected function disable_emoji() {
+        add_action( 'init', function () {
+            if ( $this->get_option( 'main', 'remove_emoji' ) ) {
+                remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+                remove_action( 'wp_print_styles', 'print_emoji_styles' );
+            }
+        } );
     }
 
     protected function need_optimization() {

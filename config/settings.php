@@ -17,6 +17,12 @@ return apply_filters( 'espdopt_settings_config', array(
                 'title'       => __( 'Remove JS', 'easy-speed-optimizer' ),
                 'description' => __( 'Specify the JS script ids (each in new line) that you want to be removed from the pages.', 'easy-speed-optimizer' ),
             ),
+            array(
+                'id'          => 'remove_emoji',
+                'type'        => 'checkbox',
+                'title'       => __( 'Remove Emoji', 'easy-speed-optimizer' ),
+                'description' => __( 'If you don\'t use emoji on your site, remove emoji script and style from HTML.', 'easy-speed-optimizer' ),
+            ),
         ),
 
     ),
