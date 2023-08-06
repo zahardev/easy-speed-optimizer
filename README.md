@@ -1,3 +1,3 @@
 # Easy Speed Optimizer
 
-This plugin removes redundant scripts from the pages and optimizes them.
+This plugin optimizes the site speed by removing redundant scripts and styles from the pages.
